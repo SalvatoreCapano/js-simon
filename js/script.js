@@ -15,12 +15,15 @@
 */
 
 const playBtn = document.querySelector("#playBtn");
+const numbersContainer = document.querySelector(".numbers");
+
 let numbersNumber = 5;
 
 
 playBtn.addEventListener("click", function(){
 
     console.clear();
+    numbersContainer.innerHTML = "";
 
     let numbers = [];
 
@@ -28,6 +31,11 @@ playBtn.addEventListener("click", function(){
 
         numbers.push(getUniqueRandomNumber(numbers));
 
+        const newElement = document.createElement("span");
+        newElement.classList.add("number");
+        newElement.innerText = numbers[i];
+
+        numbersContainer.append(newElement);
     }
     console.log("L'array da indovinare e'", numbers);
 
