@@ -1,0 +1,28 @@
+/* CSS RESET */
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.container {
+   
+    border: 3px solid black;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+}
