@@ -14,11 +14,14 @@
     -Stampare array numeri indovinati 
 */
 
+
+
+const root = document.querySelector(":root");
 const playBtn = document.querySelector("#playBtn");
 const numbersContainer = document.querySelector(".numbers");
+const timer = document.querySelector(".timer");
 
 let numbersNumber = 5;
-
 
 playBtn.addEventListener("click", function(){
 
@@ -27,6 +30,7 @@ playBtn.addEventListener("click", function(){
 
     let numbers = [];
 
+    // Crea e stampa i numeri casuali
     for (let i = 0; i <= numbersNumber; i++) {
 
         numbers.push(getUniqueRandomNumber(numbers));
@@ -39,10 +43,28 @@ playBtn.addEventListener("click", function(){
     }
     console.log("L'array da indovinare e'", numbers);
 
+    // Countdown
+    let seconds = 5;
+    let percUnit = 100 / seconds;
+    let perc = 100;
+
+    const countdown = setInterval(function(){
+
+        if (seconds >= 0) {
+            console.log(seconds);
+            timer.innerText = seconds;
+            root.style.setProperty("--progressBarWidth", `${perc}%`)
+
+            seconds--;
+            perc = perc - percUnit;
+        }
+        else {
+            clearInterval(countdown);
+            console.log("FINE");
+            numbersContainer.style.display = "none";
+        }
+    },1000);
 });
-
-
-
 
 
 
