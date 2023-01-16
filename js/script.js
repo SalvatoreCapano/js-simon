@@ -51,7 +51,7 @@ playBtn.addEventListener("click", function(){
     console.log("L'array da indovinare e'", numbers);
 
     // Countdown
-    let seconds = 2;
+    let seconds = 30;
     let percUnit = 100 / seconds;
     let perc = 100;
 
